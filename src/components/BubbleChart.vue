@@ -59,6 +59,10 @@ export default {
         legend: {
           display: true
         },
+        title: {
+          display: true,
+          text: 'Chart.js Bubble Chart'
+        },
         responsive: true,
         maintainAspectRatio: false
       }
