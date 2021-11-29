@@ -1,16 +1,17 @@
 <template>
-  <div class="small">
-    <chart :chart-data="datacollection"></chart>
+  <div>
+    <h3>Random Chart Example in Vue</h3>
+    <random-chart :chart-data="datacollection"></random-chart>
     <button @click="fillData()">Randomize</button>
   </div>
 </template>
 
 <script>
-import Chart from './Chart.vue'
+import RandomChart from '@/components/RandomChart'
 
 export default {
   components: {
-    Chart
+    RandomChart
   },
   data () {
     return {
@@ -27,12 +28,12 @@ export default {
         labels: [this.getRandomInt(), this.getRandomInt()],
         datasets: [
           {
-            label: 'Data One',
+            label: 'Data 1',
             backgroundColor: '#f87979',
             data: [this.getRandomInt(), this.getRandomInt()]
           }, {
-            label: 'Data One',
-            backgroundColor: '#f87979',
+            label: 'Data 2',
+            backgroundColor: '#dddd99',
             data: [this.getRandomInt(), this.getRandomInt()]
           }
         ]

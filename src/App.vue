@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <Chart />
+    <div id="nav">
+      <router-link to="/">Line</router-link> |
+      <router-link to="/bar">Bar</router-link> |
+      <router-link to="/doughnut">Doughnut</router-link> |
+      <router-link to="/pie">Pie</router-link> |
+      <router-link to="/bubble">Bubble</router-link> |
+      <router-link to="/scatter">Scatter</router-link> |
+      <router-link to="/random">Random</router-link>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <router-view />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-
-<script>
-import Chart from './components/Chart.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Chart
-  }
-}
-</script>
 
 <style>
 #app {
@@ -22,6 +27,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

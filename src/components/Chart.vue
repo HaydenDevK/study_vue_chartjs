@@ -1,47 +1,47 @@
 <!-- Bar -->
-<script>
-import { Bar } from 'vue-chartjs'
+<!--<script>-->
+<!--import { Bar } from 'vue-chartjs'-->
 
-export default {
-  extends: Bar,
-  data () {
-    return {
-      chartdata: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: 'Number of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 5000 }
-      }
-    }
-  },
-  mounted () {
-    this.renderChart(this.chartdata, this.options)
-  }
-}
-</script>
+<!--export default {-->
+<!--  extends: Bar,-->
+<!--  data () {-->
+<!--    return {-->
+<!--      chartdata: {-->
+<!--        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],-->
+<!--        datasets: [{-->
+<!--          label: 'Number of Votes',-->
+<!--          data: [12, 19, 3, 5, 2, 3],-->
+<!--          backgroundColor: [-->
+<!--            'rgba(255, 99, 132, 0.2)',-->
+<!--            'rgba(54, 162, 235, 0.2)',-->
+<!--            'rgba(255, 206, 86, 0.2)',-->
+<!--            'rgba(75, 192, 192, 0.2)',-->
+<!--            'rgba(153, 102, 255, 0.2)',-->
+<!--            'rgba(255, 159, 64, 0.2)'-->
+<!--          ],-->
+<!--          borderColor: [-->
+<!--            'rgba(255, 99, 132, 1)',-->
+<!--            'rgba(54, 162, 235, 1)',-->
+<!--            'rgba(255, 206, 86, 1)',-->
+<!--            'rgba(75, 192, 192, 1)',-->
+<!--            'rgba(153, 102, 255, 1)',-->
+<!--            'rgba(255, 159, 64, 1)'-->
+<!--          ],-->
+<!--          borderWidth: 1-->
+<!--        }]-->
+<!--      },-->
+<!--      options: {-->
+<!--        responsive: true,-->
+<!--        maintainAspectRatio: false,-->
+<!--        animation: { duration: 5000 }-->
+<!--      }-->
+<!--    }-->
+<!--  },-->
+<!--  mounted () {-->
+<!--    this.renderChart(this.chartdata, this.options)-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
 
 
 <!-- Line -->
@@ -118,102 +118,102 @@ export default {
 <!--</script>-->
 
 <!-- 버블 -->
-<script>
+<!--<script>-->
 
-import { Bubble } from 'vue-chartjs'
+<!--import { Bubble } from 'vue-chartjs'-->
 
-export default {
-  extends: Bubble,
-  data () {
-    return {
-      datacollection: {
-        labels: ['Data'],
-        datasets: [
-          {
-            label: "ㅇㅇ",
-            backgroundColor: '#f87979',
-            pointBackgroundColor: 'white',
-            borderWidth: 1,
-            pointBorderColor: '#249EBF',
-            data: [
-              {
-                x: 100,
-                y: 0,
-                r: 10,
-              },
-              {
-                x: 60,
-                y: 30,
-                r: 20
-              },
-              {
-                x: 40,
-                y: 60,
-                r: 25
-              },
-              {
-                x: 80,
-                y: 80,
-                r: 50
-              },
-              {
-                x: 20,
-                y: 30,
-                r: 25
-              },
-              {
-                x: 0,
-                y: 100,
-                r: 5
-              }
-            ]
-          }
-        ]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            },
-            gridLines: {
-              display: true
-            }
-          }],
-          xAxes: [{
-            ticks: {
-              beginAtZero: true,
-              fontSize : 40,
-            },
-            gridLines: { // 세로
-              display: true
-            },
-          }]
-        },
-        // legend: {
-        //   display: false
-        // },
-        tooltips: {
-          enabled: true,
-          mode: 'single',
-          callbacks: {
-            label: (tooltipItems) => {
-              return tooltipItems.yLabel + '명'; // 가공
-            }
-          }
-        },
-        // responsive: true,
-        // maintainAspectRatio: false,
-        // height: 100
-      }
-    }
-  },
-  mounted () {
-    // this.chartData is created in the mixin
-    this.renderChart(this.datacollection, this.options)
-  }
-}
-</script>
+<!--export default {-->
+<!--  extends: Bubble,-->
+<!--  data () {-->
+<!--    return {-->
+<!--      datacollection: {-->
+<!--        labels: ['Data'],-->
+<!--        datasets: [-->
+<!--          {-->
+<!--            label: "ㅇㅇ",-->
+<!--            backgroundColor: '#f87979',-->
+<!--            pointBackgroundColor: 'white',-->
+<!--            borderWidth: 1,-->
+<!--            pointBorderColor: '#249EBF',-->
+<!--            data: [-->
+<!--              {-->
+<!--                x: 100,-->
+<!--                y: 0,-->
+<!--                r: 10,-->
+<!--              },-->
+<!--              {-->
+<!--                x: 60,-->
+<!--                y: 30,-->
+<!--                r: 20-->
+<!--              },-->
+<!--              {-->
+<!--                x: 40,-->
+<!--                y: 60,-->
+<!--                r: 25-->
+<!--              },-->
+<!--              {-->
+<!--                x: 80,-->
+<!--                y: 80,-->
+<!--                r: 50-->
+<!--              },-->
+<!--              {-->
+<!--                x: 20,-->
+<!--                y: 30,-->
+<!--                r: 25-->
+<!--              },-->
+<!--              {-->
+<!--                x: 0,-->
+<!--                y: 100,-->
+<!--                r: 5-->
+<!--              }-->
+<!--            ]-->
+<!--          }-->
+<!--        ]-->
+<!--      },-->
+<!--      options: {-->
+<!--        scales: {-->
+<!--          yAxes: [{-->
+<!--            ticks: {-->
+<!--              beginAtZero: true-->
+<!--            },-->
+<!--            gridLines: {-->
+<!--              display: true-->
+<!--            }-->
+<!--          }],-->
+<!--          xAxes: [{-->
+<!--            ticks: {-->
+<!--              beginAtZero: true,-->
+<!--              fontSize : 40,-->
+<!--            },-->
+<!--            gridLines: { // 세로-->
+<!--              display: true-->
+<!--            },-->
+<!--          }]-->
+<!--        },-->
+<!--        // legend: {-->
+<!--        //   display: false-->
+<!--        // },-->
+<!--        tooltips: {-->
+<!--          enabled: true,-->
+<!--          mode: 'single',-->
+<!--          callbacks: {-->
+<!--            label: (tooltipItems) => {-->
+<!--              return tooltipItems.yLabel + '명'; // 가공-->
+<!--            }-->
+<!--          }-->
+<!--        },-->
+<!--        // responsive: true,-->
+<!--        // maintainAspectRatio: false,-->
+<!--        // height: 100-->
+<!--      }-->
+<!--    }-->
+<!--  },-->
+<!--  mounted () {-->
+<!--    // this.chartData is created in the mixin-->
+<!--    this.renderChart(this.datacollection, this.options)-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
 
 <!-- 반응형? -->
 <!--<script>-->
