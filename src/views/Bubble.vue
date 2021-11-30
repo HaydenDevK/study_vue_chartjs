@@ -219,6 +219,7 @@ export default {
         }
       }
       this.datacollection.datasets = newResponse
+      // this.datacollection.datasets.splice(0, this.datacollection.datasets.length, ...newResponse)
     },
     getRandomInt () {
       return Math.floor(Math.random() * (1000)) + 5
