@@ -221,7 +221,7 @@ export default {
       this.datacollection.datasets = newResponse
     },
     getRandomInt () {
-      return Math.floor(Math.random() * (100)) + 5
+      return Math.floor(Math.random() * (1000)) + 5
     },
     getRandomRgb () {
       return Math.floor(Math.random() * 256)
