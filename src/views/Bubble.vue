@@ -185,7 +185,7 @@ export default {
           id: 'h',
           x: this.getRandomInt(),
           y: this.getRandomInt()
-        },
+        }
       ]
 
       // 가공해서 붙이기
@@ -206,12 +206,7 @@ export default {
         }
         else if (indexId > -1) {
           obj.r = 10
-          newResponse.push({
-            label: obj.id,
-            data: [obj], // 배열로 감싸야함
-            borderWidth: 1,
-            backgroundColor: newResponse[indexId].backgroundColor
-          })
+          newResponse[indexId].data.push(obj)
         }
         else {
           obj.r = 10
@@ -219,7 +214,7 @@ export default {
             label: obj.id,
             data: [obj], // 배열로 감싸야함
             borderWidth: 1,
-            backgroundColor: `rgba(${this.getRandomRgb(obj.id)}, ${this.getRandomRgb(obj.id)}, ${this.getRandomRgb(obj.id)}, 0.5)`
+            backgroundColor: `rgba(${this.getRandomRgb()}, ${this.getRandomRgb()}, ${this.getRandomRgb()}, 0.5)`
           })
         }
       }
