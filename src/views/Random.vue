@@ -9,6 +9,7 @@
 <script>
 import RandomChart from '@/components/RandomChart'
 
+// chartData.datasets
 export default {
   components: {
     RandomChart
@@ -25,17 +26,18 @@ export default {
   methods: {
     fillData () {
       this.datacollection = {
-        labels: [this.getRandomInt(), this.getRandomInt()],
+        labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
         datasets: [
           {
             label: 'Data 1',
             backgroundColor: '#f87979',
-            data: [this.getRandomInt(), this.getRandomInt()]
-          }, {
+            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+          },
+          {
             label: 'Data 2',
             backgroundColor: '#dddd99',
-            data: [this.getRandomInt(), this.getRandomInt()]
-          }
+            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+          },
         ]
       }
     },
