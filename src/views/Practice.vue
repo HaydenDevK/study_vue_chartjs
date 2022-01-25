@@ -1,17 +1,30 @@
 <template>
   <div>
-    <h3>Bubble Chart Example in Vue</h3>
+    <button @click="onRequest()">
+      Request
+    </button>
+
+    <h2>
+      Bubble Chart
+    </h2>
     <bubble-random-chart :chart-data="datacollection" :options="options"></bubble-random-chart>
-    <button @click="onRequest()">Request</button>
+
+    <h2>
+      Scatter Chart
+    </h2>
+    <scatter-random-chart :chart-data="datacollection" :options="options"></scatter-random-chart>
   </div>
 </template>
 
 <script>
-import BubbleRandomChart from '@/components/BubbleRandomChart'
+import BubbleRandomChart from '@/components/BubbleRandomChart.vue'
+import ScatterRandomChart from '@/components/ScatterRandomChart.vue'
 
 export default {
+  name: 'AppDataChartPractice',
   components: {
-    BubbleRandomChart
+    BubbleRandomChart,
+    ScatterRandomChart
   },
   data () {
     return {
@@ -22,11 +35,7 @@ export default {
         legend: {
           display: true
         },
-        title: {
-          display: true,
-          text: 'Chart.js Bubble Chart'
-        },
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: false
       }
     }
@@ -35,26 +44,6 @@ export default {
     this.onRequest()
   },
   methods: {
-    onReset() {
-      // Q. this.datacollection.datasets 배열을 초기화하려고 했는데, 초기화가 안되어서, this.datacollection 자체를 초기화했는데, 왜 datasets 초기화가 안된건지
-
-      // 첫번째 시도
-      // this.datacollection.datasets = []
-
-      // 두번째 시도
-      // const emptyArr = []
-      // this.datacollection.datasets = emptyArr
-
-      // 세번째 시도
-      // this.datacollection.datasets.splice(0, this.datacollection.datasets.length)
-
-      // 네번째 시도
-      // this.datacollection.datasets.length = 0
-
-      this.datacollection = {
-        datasets: []
-      }
-    },
     onRequest() {
       // 기존 데이터 초기화
       this.onReset()
@@ -191,6 +180,37 @@ export default {
       // 가공해서 붙이기
       this.getDataSets(response)
     },
+    onReset() {
+      // Q. this.datacollection.datasets 배열을 초기화하려고 했는데, 초기화가 안되어서, this.datacollection 자체를 초기화했는데, 왜 datasets 초기화가 안된건지
+
+      // 첫번째 시도
+      // console.log(this.datacollection)
+      // this.datacollection.datasets = []
+      // this.datacollection.labels = []
+      // console.log(this.datacollection) // 안 비워지는데
+
+      // 두번째 시도
+      // const emptyArr = []
+      // this.datacollection.datasets = emptyArr
+
+      // 세번째 시도
+      // console.log(this.datacollection) // 10개라고 뜨는에 까보면 0개네 이상하네
+      // console.log(this.datacollection.datasets)
+      // if (this.datacollection.datasets.length > 0 && this.datacollection.labels.length > 0) {
+      //   console.log('hi')
+      //   this.datacollection.datasets.splice(0, this.datacollection.datasets.length)
+      //   this.datacollection.labels.splice(0, this.datacollection.labels.length)
+      // }
+      // console.log(this.datacollection) // 잘 비워지는데 왜
+
+      // 네번째 시도
+      // this.datacollection.datasets.length = 0
+
+      // 이렇게 해야 작동
+      this.datacollection = {
+        datasets: []
+      }
+    },
     getDataSets (response) {
       let newResponse = []
       for (let obj of response) {
@@ -218,7 +238,10 @@ export default {
           })
         }
       }
+
+      // console.log(this.datacollection)
       this.datacollection.datasets = newResponse
+      // console.log(this.datacollection)
       // this.datacollection.datasets.splice(0, this.datacollection.datasets.length, ...newResponse)
     },
     getRandomInt () {
