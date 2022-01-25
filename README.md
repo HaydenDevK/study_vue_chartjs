@@ -1,4 +1,4 @@
-# chart_js
+# sophie_vue_chart_js
 
 ## Project setup
 ```
